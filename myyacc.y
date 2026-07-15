@@ -212,10 +212,10 @@ statement	: Assigment
 			| 	IF condition THEN 
 									{	
 										$<val>$=genCodeOne(jpc,0);//先不填跳转地址，后面用拉链回填 / emit jpc with a placeholder target, backpatched later
-										backPath($<val>$);
 									}
 				statement
 									{
+										backPath($<val>$);
 										printf("\n>>>>使用产生式规则:statement->IF condition THEN statement \n");
 										
 									}
